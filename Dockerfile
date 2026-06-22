@@ -1,7 +1,2 @@
-FROM ubuntu:latest
-
-RUN apt update && apt install -y curl wget
-
-RUN fallocate -l 1G /bigfile
-
-CMD ["bash"]
+FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
