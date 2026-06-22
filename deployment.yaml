@@ -13,7 +13,5 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
+- name: nginx
+  image: hetplt/nginx:v1
