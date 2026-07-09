@@ -1,10 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: nginx
+  namespace: default
 
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: nginx
@@ -18,10 +21,15 @@ spec:
       containers:
         - name: nginx
           image: hetptl/nginx:v3
+
+          ports:
+            - containerPort: 80
+
           resources:
             requests:
               cpu: "100m"
               memory: "128Mi"
+
             limits:
               cpu: "500m"
               memory: "256Mi"
